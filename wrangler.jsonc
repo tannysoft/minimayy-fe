@@ -1,22 +1,31 @@
 {
-  "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "minimayy-blog",
-  "main": ".open-next/worker.js",
-  "compatibility_date": "2025-03-25",
-  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
-  "assets": {
-    "directory": ".open-next/assets",
-    "binding": "ASSETS"
-  },
-  "observability": {
-    "enabled": true
-  }
-
-  // Optional: Incremental cache for ISR (uncomment and create the KV namespace first)
-  // "kv_namespaces": [
-  //   {
-  //     "binding": "NEXT_INC_CACHE_KV",
-  //     "id": "<your-kv-namespace-id>"
-  //   }
-  // ]
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "minimayy-blog",
+	"main": ".open-next/worker.js",
+	"compatibility_date": "2025-03-25",
+	"compatibility_flags": [
+		"nodejs_compat",
+		"global_fetch_strictly_public"
+	],
+	"assets": {
+		"directory": ".open-next/assets",
+		"binding": "ASSETS"
+	},
+	"observability": {
+		"enabled": true
+	},
+	"kv_namespaces": [
+		{
+			"binding": "NEXT_INC_CACHE_KV",
+			"id": "d13ee83de7244fdda1788388e4b4928d",
+			"remote": true
+		}
+	]
+	// Optional: Incremental cache for ISR (uncomment and create the KV namespace first)
+	// "kv_namespaces": [
+	//   {
+	//     "binding": "NEXT_INC_CACHE_KV",
+	//     "id": "<your-kv-namespace-id>"
+	//   }
+	// ]
 }
