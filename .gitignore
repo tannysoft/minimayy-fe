@@ -82,6 +82,15 @@ Thumbs.db
 Desktop.ini
 
 # ──────────────────────────────
+# Cloudflare / OpenNext
+# ──────────────────────────────
+/.open-next/
+/.wrangler/
+/cloudflare-env.d.ts
+.dev.vars
+.dev.vars.*
+
+# ──────────────────────────────
 # Misc
 # ──────────────────────────────
 *.pem

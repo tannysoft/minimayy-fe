@@ -11,3 +11,7 @@ const nextConfig = {
 };
 
 export default nextConfig;
+
+// Enable Cloudflare bindings (R2, KV, D1, etc.) in `next dev`
+import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
+initOpenNextCloudflareForDev();
