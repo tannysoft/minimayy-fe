@@ -1,0 +1,229 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cream-50: #fdfbf5;
+  --cream-100: #faf6ee;
+  --cream-200: #f5efe4;
+  --sand-400: #c9b79c;
+  --taupe-600: #6e5a44;
+  --taupe-700: #5c4a3a;
+  --gold: #c9a770;
+  --ink: #1a1612;
+
+  /* Primary sans is Aktiv Grotesk Thai (loaded via Typekit) */
+  --font-sans: "aktiv-grotesk-thai";
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--cream-100);
+  color: var(--ink);
+  font-feature-settings: "ss01", "ss02", "kern";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Subtle paper grain over the whole site */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgba(139, 115, 85, 0.06) 1px,
+    transparent 0
+  );
+  background-size: 4px 4px;
+  mix-blend-mode: multiply;
+}
+
+main,
+header,
+footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* Display text with subtle 3D beige outline — matches Rate Card headings */
+.display-stroke {
+  color: var(--cream-100);
+  -webkit-text-stroke: 1px var(--taupe-700);
+  text-shadow: 3px 3px 0 var(--sand-400);
+}
+
+/* Editorial prose for WordPress content
+   Priority: English display font → Prompt (Thai) → system */
+.prose-editorial {
+  font-family: "thongterm", var(--font-sans-latin), var(--font-sans),
+    system-ui, sans-serif;
+  color: #2a241d;
+  font-size: 1.125rem;
+  line-height: 1.9;
+}
+.prose-editorial p {
+  margin: 1.1em 0;
+}
+.prose-editorial h1,
+.prose-editorial h2,
+.prose-editorial h3,
+.prose-editorial h4 {
+  font-family: var(--font-sans), var(--font-sans-latin), system-ui,
+    sans-serif;
+  font-weight: 600;
+  color: var(--taupe-700);
+  letter-spacing: -0.01em;
+  margin: 1.8em 0 0.6em;
+  line-height: 1.3;
+}
+.prose-editorial h2 {
+  font-size: 1.75rem;
+}
+.prose-editorial h3 {
+  font-size: 1.4rem;
+}
+.prose-editorial h4 {
+  font-size: 1.2rem;
+}
+.prose-editorial a {
+  color: var(--taupe-600);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--sand-400);
+  text-decoration-thickness: 1px;
+  transition: color 0.2s;
+}
+.prose-editorial a:hover {
+  color: var(--gold);
+}
+.prose-editorial strong {
+  color: var(--taupe-700);
+  font-weight: 600;
+}
+.prose-editorial ul,
+.prose-editorial ol {
+  margin: 1.1em 0;
+  padding-left: 1.4em;
+}
+.prose-editorial ul {
+  list-style: none;
+}
+.prose-editorial ul > li {
+  position: relative;
+  padding-left: 1.2em;
+  margin: 0.4em 0;
+}
+.prose-editorial ul > li::before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-size: 0.8em;
+  top: 0.35em;
+}
+.prose-editorial ul ul > li::before {
+  content: "◦";
+  color: var(--sand-400);
+}
+.prose-editorial ol {
+  list-style: decimal;
+}
+.prose-editorial ol > li {
+  padding-left: 0.3em;
+  margin: 0.4em 0;
+}
+.prose-editorial img {
+  border-radius: 1rem;
+  margin: 1.6em auto;
+  box-shadow: 0 2px 4px rgba(139, 115, 85, 0.08),
+    0 24px 48px rgba(139, 115, 85, 0.1);
+}
+.prose-editorial figure {
+  margin: 1.8em 0;
+}
+.prose-editorial figcaption {
+  font-size: 0.875rem;
+  color: var(--taupe-600);
+  text-align: center;
+  margin-top: 0.6em;
+  font-style: italic;
+}
+.prose-editorial blockquote {
+  border-left: 2px solid var(--gold);
+  padding: 0.2em 0 0.2em 1.4em;
+  margin: 1.6em 0;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--taupe-700);
+}
+.prose-editorial code {
+  background: var(--cream-200);
+  padding: 0.15em 0.45em;
+  border-radius: 0.35rem;
+  font-size: 0.92em;
+}
+.prose-editorial hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--sand-400),
+    transparent
+  );
+  margin: 2.5em auto;
+  max-width: 40%;
+}
+.prose-editorial iframe,
+.prose-editorial .wp-block-embed iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 1rem;
+  margin: 1.6em 0;
+}
+.prose-editorial table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.6em 0;
+  font-size: 0.95em;
+}
+.prose-editorial th,
+.prose-editorial td {
+  border: 1px solid var(--cream-300, #ede4d2);
+  padding: 0.6em 0.8em;
+  text-align: left;
+}
+.prose-editorial th {
+  background: var(--cream-200);
+  color: var(--taupe-700);
+  font-weight: 600;
+}
+
+/* Decorative sparkle keyframes */
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+.animate-twinkle {
+  animation: twinkle 3.5s ease-in-out infinite;
+}
+
+/* Thai word-breaking */
+.thai-text {
+  word-break: break-word;
+  line-break: loose;
+}

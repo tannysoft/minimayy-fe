@@ -1,0 +1,94 @@
+# ──────────────────────────────
+# Dependencies
+# ──────────────────────────────
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# ──────────────────────────────
+# Next.js
+# ──────────────────────────────
+/.next/
+/out/
+next-env.d.ts
+
+# ──────────────────────────────
+# Production build
+# ──────────────────────────────
+/build
+/dist
+
+# ──────────────────────────────
+# Testing / coverage
+# ──────────────────────────────
+/coverage
+*.lcov
+.nyc_output
+
+# ──────────────────────────────
+# Debug logs
+# ──────────────────────────────
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+lerna-debug.log*
+
+# ──────────────────────────────
+# TypeScript
+# ──────────────────────────────
+*.tsbuildinfo
+
+# ──────────────────────────────
+# Environment & secrets
+# ──────────────────────────────
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env*.local
+
+# ──────────────────────────────
+# Editors / IDEs
+# ──────────────────────────────
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*.sublime-workspace
+*.sublime-project
+
+# ──────────────────────────────
+# OS
+# ──────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# ──────────────────────────────
+# Misc
+# ──────────────────────────────
+*.pem
+*.log
+.cache/
+.turbo/
+.vercel
+.netlify
+.firebase/
+.sentryclirc
